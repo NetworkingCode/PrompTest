@@ -1,23 +1,142 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prompetes</title>
+    <title>PROMPTEST</title>
+    <style>
+        /* Esta regla establece la fuente y el margen para el cuerpo del documento */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+
+        /* Comentar el siguiente codigo */
+        #content {
+            max-width: 600px;
+            width: 100%;
+            padding: 20px;
+            box-sizing: border-box;
+            background-color: #f9f9f9;
+            border-radius: 10px;
+        }
+
+        /* 
+        Esta regla establece que los elementos <input> y <textarea>
+        tendrán un ancho del 100% de su contenedor y un margen inferior de 10 píxeles.
+        */
+        input, textarea {
+            width: 100%;
+            margin-bottom: 10px;
+            /* Comentar el siguiente codigo */
+            padding: 10px;
+            box-sizing: border-box;
+
+            resize: vertical; /* Permitir solo redimensionamiento vertical */
+            overflow-y: auto; /* Agregar barra de desplazamiento vertical si es necesario */
+            word-wrap: break-word; /* Romper palabras largas */
+        }
+
+        /* Esta regla aplica un margen derecho de 10 píxeles a todos los botones */        
+        button {
+            margin-right: 10px;
+            /* Comentar el siguiente codigo */
+            padding: 10px 15px;
+            cursor: pointer;
+
+        }
+
+
+        /* Aplica un margen inferior de 20 píxeles a todos los elementos con la clase "prompt-entry" */
+        .prompt-entry {
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        /* Comentar el siguiente codigo */
+
+        @media (min-width: 600px) {
+            input, textarea {
+                width: 50%;
+            }
+
+            button {
+                padding: 10px 20px;
+            }
+        }
+
+        @media (min-width: 900px) {
+            input, textarea {
+                width: 100%;
+            }
+
+            button {
+                padding: 10px 25px;
+            }
+        }
+    </style>
 </head>
+
 <body>
 
+<div id="content">
+    <label for="titulo">TITULO DEL PROMPT: </label><br>
+    <input id="titulo" type="text" placeholder="Escribe el título de tu prompt..."><br><br>
 
-    <label for="">Titulo del prompt: </label><br>
-    <input width="" type="text" placeholder="Escribe el titulo de tu prompt..."><br><br>
-
-    <label for="">Escribe tu prompt:</label><br>
+    <label for="comentario">ESCRIBE TU PROMPT:</label><br>
     <textarea rows="10" cols="60" id="comentario" name="comentario" placeholder="Quiero que dibujes una mina rica con las medias..."></textarea><br>
 
-    <button>GRABAR</button> <button>LIMPIAR</button><br><br>
+    <button onclick="grabarPrompt()">GRABAR</button>
+    <button onclick="limpiarCampos()">LIMPIAR</button><br><br>
 
+    <br>
+    <hr>
 
+    <div id="listaPrompts"></div>
 
-    
+</div>
+
+    <script>
+        function grabarPrompt() {
+            const titulo = document.getElementById('titulo').value;
+            const comentario = document.getElementById('comentario').value;
+
+            if (titulo && comentario) {
+                const listaPrompts = document.getElementById('listaPrompts');
+
+                const promptEntry = document.createElement('div');
+                promptEntry.className = 'prompt-entry';
+
+                const promptTitle = document.createElement('h3');
+                promptTitle.innerText = titulo;
+
+                const promptText = document.createElement('p');
+                promptText.innerText = comentario;
+
+                promptEntry.appendChild(promptTitle);
+                promptEntry.appendChild(promptText);
+
+                listaPrompts.prepend(promptEntry);
+
+                limpiarCampos();
+            } else {
+                alert('Por favor, llena ambos campos antes de grabar.');
+            }
+        }
+
+        function limpiarCampos() {
+            document.getElementById('titulo').value = '';
+            document.getElementById('comentario').value = '';
+        }
+    </script>
 </body>
 </html>
