@@ -37,10 +37,20 @@ function limpiarCampos() {
     document.getElementById('comentario').value = '';
 }
 
+
 function copiarTexto(texto) {
     navigator.clipboard.writeText(texto).then(() => {
-        alert('Texto copiado al portapapeles');
+        mostrarMensajeCopiado();
     }).catch(err => {
-        alert('Error al copiar el texto: ' + err);
+        console.error('Error al copiar el texto: ', err);
     });
+}
+
+function mostrarMensajeCopiado() {
+    const mensaje = document.getElementById('mensajeCopiado');
+    mensaje.classList.add('visible');
+
+    setTimeout(() => {
+        mensaje.classList.remove('visible');
+    }, 2000); // El mensaje desaparecerá después de 2 segundos
 }
