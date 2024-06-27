@@ -21,7 +21,7 @@ loginForm.addEventListener('submit', (event) => {
             passwordInput.value = '';
 
             // Redirigir a la página principal después del inicio de sesión exitoso
-            window.location.href = 'main.html';
+            window.location.href = '/main/main.html';
         })
         .catch((error) => {
             // Manejar errores de inicio de sesión (puedes mostrar un mensaje de error al usuario)
