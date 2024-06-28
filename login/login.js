@@ -16,6 +16,9 @@ loginForm.addEventListener('submit', (event) => {
     // Iniciar sesión con correo y contraseña usando Firebase Auth
     auth.signInWithEmailAndPassword(email, password)
         .then((userCredential) => {
+            // Mostrar un mensaje de confirmación antes de la redirección
+            alert('Inicio de sesión exitoso! Redirigiendo a la página principal...');
+
             // Limpiar los campos del formulario después del inicio de sesión exitoso (opcional)
             emailInput.value = '';
             passwordInput.value = '';
@@ -26,5 +29,6 @@ loginForm.addEventListener('submit', (event) => {
         .catch((error) => {
             // Manejar errores de inicio de sesión (puedes mostrar un mensaje de error al usuario)
             console.error('Error al iniciar sesión:', error.message);
+            alert('Error al iniciar sesión: ' + error.message); // Mostrar mensaje de error
         });
 });
