@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    
+
     <div class="login-container">
         <h2>Iniciar Sesión</h2>
         <form id="login-form">
@@ -27,7 +27,23 @@
 
     <!-- Importar scripts al final del cuerpo -->
     <!--<script type="module" src="/workspaces/PrompTest/login/firebase-init.js"></script>-->
-    <script type="module" src="login/prueba.html"></script>
+    <!--<script type="module" src="login/prueba.html"></script>-->
+
+    <script>
+
+        document.getElementById('login-form').addEventListener('submit', function (event) {
+            event.preventDefault(); // Prevenir el envío del formulario por defecto
+
+            // Aquí puedes agregar la lógica de autenticación si la necesitas
+
+            // Redirigir a la página "prueba.html"
+            window.location.href = 'prueba.html';
+        });
+
+
+
+
+    </script>
 </body>
 
 </html>
