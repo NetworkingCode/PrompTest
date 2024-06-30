@@ -4,35 +4,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="main/style.css">
 
     <title>PROMPTEST</title>
-   
+
 </head>
 
 <body>
 
-<div id="content">
-    <label for="titulo">TITULO DEL PROMPT: </label><br>
-    <input id="titulo" type="text" placeholder="Escribe el título de tu prompt..."><br><br>
+    <div id="content">
+        <label for="titulo">TITULO DEL PROMPT: </label><br>
+        <input id="titulo" type="text" placeholder="Escribe el título de tu prompt..."><br><br>
 
-    <label for="comentario">ESCRIBE TU PROMPT:</label><br>
-    <textarea rows="10" cols="60" id="comentario" name="comentario" placeholder="Quiero que dibujes una mina rica con las medias..."></textarea><br>
+        <label for="comentario">ESCRIBE TU PROMPT:</label><br>
+        <textarea rows="10" cols="60" id="comentario" name="comentario"
+            placeholder="Quiero que dibujes una mina rica con las medias..."></textarea><br>
 
-    <button onclick="grabarPrompt()">GRABAR</button>
-    <button onclick="limpiarCampos()">LIMPIAR</button><br><br>
+        <button onclick="grabarPrompt()">GRABAR</button>
+        <button onclick="limpiarCampos()">LIMPIAR</button><br><br>
 
-    <br>
-    <hr>
+        <br>
+        <hr>
 
-    <div id="listaPrompts"></div>
+        <div id="listaPrompts"></div>
 
-</div>
+    </div>
 
-<div id="mensajeCopiado" class="mensaje-copiado">¡Copiado!</div>
+    <div id="mensajeCopiado" class="mensaje-copiado">¡Copiado!</div>
 
-<script type="module" src="firebase-init.js"></script>
-    <script type="module" src="main.js"></script>
+    <script type="module" src="firebase-init.js"></script>
+    <script type="module" src="main/main.js"></script>
 
 </body>
+
 </html>

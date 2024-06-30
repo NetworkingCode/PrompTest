@@ -24,7 +24,7 @@ function grabarPrompt() {
         promptEntry.appendChild(copyButton);
 
         listaPrompts.prepend(promptEntry);
-        
+
 
         limpiarCampos();
     } else {
