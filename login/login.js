@@ -30,7 +30,7 @@ loginForm.addEventListener('submit', (event) => {
           })
           .catch((error) => {
                
-               // Manejar errores de inicio de sesión (puedes mostrar un mensaje de error al usuario)
+                    // Manejar errores de inicio de sesión (puedes mostrar un mensaje de error al usuario)
                console.error('Error al iniciar sesión:', error.message);
                alert('Error al iniciar sesión: ' + error.message); // Mostrar mensaje de error
           });
