@@ -1,5 +1,6 @@
-// Importar la instancia de autenticación desde firebase-init.js
+// Importar la instancia de autenticación y el método signInWithEmailAndPassword desde firebase-init.js
 import { auth } from './firebase-init.js';
+import { signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 
 // Obtener referencia a los elementos del formulario
 const loginForm = document.getElementById('login-form');
@@ -14,8 +15,9 @@ loginForm.addEventListener('submit', (event) => {
      const password = passwordInput.value;
 
      // Iniciar sesión con correo y contraseña usando Firebase Auth
-     auth.signInWithEmailAndPassword(email, password)
+     signInWithEmailAndPassword(auth, email, password)
           .then((userCredential) => {
+               
                // Mostrar un mensaje de confirmación antes de la redirección
                alert('Inicio de sesión exitoso! Redirigiendo a la página principal...');
 
@@ -27,11 +29,13 @@ loginForm.addEventListener('submit', (event) => {
                window.location.href = '/main/main.html';
           })
           .catch((error) => {
+               
                // Manejar errores de inicio de sesión (puedes mostrar un mensaje de error al usuario)
                console.error('Error al iniciar sesión:', error.message);
                alert('Error al iniciar sesión: ' + error.message); // Mostrar mensaje de error
           });
 });
+
 
 
 //Redirigir a la página principal después del inicio de sesión exitoso
