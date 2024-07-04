@@ -26,7 +26,7 @@ loginForm.addEventListener('submit', (event) => {
                passwordInput.value = '';
 
                // Redirigir a la página principal después del inicio de sesión exitoso
-               window.location.href = '/main/main.html';
+               window.location.href = 'main/main.html';
           })
           .catch((error) => {
                
