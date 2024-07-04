@@ -1,5 +1,5 @@
 // Importar la instancia de autenticación y el método signInWithEmailAndPassword desde firebase-init.js
-import { auth } from './firebase-init.js';
+import { auth } from '/workspaces/PrompTest/login/firebase-init.js';
 import { signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.12.3/firebase-auth.js";
 
 // Obtener referencia a los elementos del formulario
