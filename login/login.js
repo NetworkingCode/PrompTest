@@ -1,19 +1,3 @@
-document.addEventListener('DOMContentLoaded', function () {
-     // Datos predeterminados para los campos del formulario
-     var datosPredeterminados = {
-          email: 'ricardonieto@live.cl',
-          password: '58931645'
-     };
-
-     // Obtener el formulario de inicio de sesión
-     var loginForm = document.getElementById('login-form');
-
-     // Asignar los valores predeterminados a los campos del formulario
-     loginForm.email.value = datosPredeterminados.email;
-     loginForm.password.value = datosPredeterminados.password;
-});
-
-
 // Importar la instancia de autenticación y el método signInWithEmailAndPassword desde firebase-init.js
 import { auth } from '/workspaces/PrompTest/login/firebase-init.js';
 import { signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.12.3/firebase-auth.js";
