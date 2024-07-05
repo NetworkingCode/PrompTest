@@ -1,11 +1,88 @@
 <!DOCTYPE html>
+<<<<<<< HEAD
 <html lang="es">
+=======
+<html lang="en">
+>>>>>>> ab6627ad4f0db813db6d6941d89287293ded517a
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<<<<<<< HEAD
     <title>Página de Login</title>
     <link rel="stylesheet" href="styles.css">
+=======
+    <title>PROMPTEST</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start; /* Cambiado para permitir el scroll */
+            height: 100%;
+            min-height: 100vh;
+            overflow-y: auto; /* Agregado para permitir el scroll */
+            background-color: #f1f1f1; /* Fondo claro para diferenciar del contenido */
+        }
+
+        #content {
+            max-width: 600px;
+            width: 100%;
+            padding: 20px;
+            box-sizing: border-box;
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            margin-top: 20px; /* Espacio superior para mejor visualización */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra para destacar el contenido */
+        }
+
+        input, textarea {
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 10px;
+            box-sizing: border-box;
+            resize: vertical;
+            overflow-y: auto;
+            word-wrap: break-word;
+        }
+
+        button {
+            margin-right: 10px;
+            padding: 10px 15px;
+            cursor: pointer;
+        }
+
+        .prompt-entry {
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #fff; /* Fondo blanco para destacar cada entrada */
+        }
+
+        @media (min-width: 600px) {
+            input, textarea {
+                width: 100%;
+            }
+
+            button {
+                padding: 10px 20px;
+            }
+        }
+
+        @media (min-width: 900px) {
+            input, textarea {
+                width: 100%;
+            }
+
+            button {
+                padding: 10px 25px;
+            }
+        }
+    </style>
+>>>>>>> ab6627ad4f0db813db6d6941d89287293ded517a
 </head>
 
 <body>
@@ -24,8 +101,63 @@
         </form>
     </div>
 
+<<<<<<< HEAD
     <script type="module" src="login/firebase-init.js"></script>
     <script type="module" src="login/login.js"></script>
 </body>
 
 </html>
+=======
+<div id="content">
+    <label for="titulo">TITULO DEL PROMPT: </label><br>
+    <input id="titulo" type="text" placeholder="Escribe el título de tu prompt..."><br><br>
+
+    <label for="comentario">ESCRIBE TU PROMPT:</label><br>
+    <textarea rows="10" cols="60" id="comentario" name="comentario" placeholder="Quiero que dibujes una mina rica con las medias..."></textarea><br>
+
+    <button onclick="grabarPrompt()">GRABAR</button>
+    <button onclick="limpiarCampos()">LIMPIAR</button><br><br>
+
+    <br>
+    <hr>
+
+    <div id="listaPrompts"></div>
+
+</div>
+
+    <script>
+        function grabarPrompt() {
+            const titulo = document.getElementById('titulo').value;
+            const comentario = document.getElementById('comentario').value;
+
+            if (titulo && comentario) {
+                const listaPrompts = document.getElementById('listaPrompts');
+
+                const promptEntry = document.createElement('div');
+                promptEntry.className = 'prompt-entry';
+
+                const promptTitle = document.createElement('h3');
+                promptTitle.innerText = titulo;
+
+                const promptText = document.createElement('p');
+                promptText.innerText = comentario;
+
+                promptEntry.appendChild(promptTitle);
+                promptEntry.appendChild(promptText);
+
+                listaPrompts.prepend(promptEntry);
+
+                limpiarCampos();
+            } else {
+                alert('Por favor, llena ambos campos antes de grabar.');
+            }
+        }
+
+        function limpiarCampos() {
+            document.getElementById('titulo').value = '';
+            document.getElementById('comentario').value = '';
+        }
+    </script>
+</body>
+</html>
+>>>>>>> ab6627ad4f0db813db6d6941d89287293ded517a
