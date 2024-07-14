@@ -54,3 +54,5 @@ function mostrarMensajeCopiado() {
         mensaje.classList.remove('visible');
     }, 2000); // El mensaje desaparecerá después de 2 segundos
 }
+
+//Guardar
