@@ -4,10 +4,6 @@ import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.12.3/firebas
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
-
-
-
-
 // Import the functions you need from the SDKs you need
 
 import { initializeApp } from "firebase/app";
@@ -31,3 +27,9 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
+
+// Obtén una referencia a la base de datos de Firestore
+const db = firebase.firestore();
+
+
+

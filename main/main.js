@@ -1,5 +1,5 @@
 import { db } from '../login/firebase-init.js';
-import { collection, addDoc, getDocs } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js";
+import { collection, addDoc, getDocs } from "https://www.gstatic.com/firebasejs/10.12.3/firebase-firestore.js";
 
 // Función para guardar un prompt en Firestore
 async function grabarPrompt() {
