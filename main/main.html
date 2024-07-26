@@ -13,11 +13,12 @@
 <body>
 
 <div id="content">
+    
     <label for="titulo">TITULO DEL PROMPT: </label><br>
-    <input id="titulo" type="text" placeholder="Escribe el título de tu prompt..."><br><br>
+    <input id="titulo" type="text" placeholder="Dale un titulo a tu idea...🤖"><br><br>
 
     <label for="comentario">ESCRIBE TU PROMPT:</label><br>
-    <textarea rows="10" cols="60" id="comentario" name="comentario" placeholder="Quiero que dibujes una mina rica con las medias..."></textarea><br>
+    <textarea rows="10" cols="60" id="comentario" name="comentario" placeholder="Escribe tu idea aqui 🦾"></textarea><br>
 
     <button onclick="grabarPrompt()">GRABAR</button>
     <button onclick="limpiarCampos()">LIMPIAR</button><br><br>
@@ -29,7 +30,10 @@
 
 </div>
 
-<script src="code.js"></script>
+
+
+<!-- Añade esto al final del body, después de los otros scripts -->
+<script type="module" src="showPrompts.js"></script>
 
 </body>
 </html>
